@@ -15,7 +15,7 @@ Vercel (builds & deploys)
       │
       │  serves live site
       ▼
-https://rainbow-bakers.vercel.app
+https://rainbowbaker.in  (also: https://rainbow-bakers.vercel.app)
 ```
 
 - **GitHub** is the source of truth for all code
@@ -39,7 +39,7 @@ These were done once when the project was created. You don't need to do these ag
 | Git remote set | `git remote add origin <url>` |
 | Vercel linked to GitHub | Vercel Dashboard → project → Settings → Git |
 | Env vars on Vercel | `VITE_SUPABASE_URL` + `VITE_SUPABASE_ANON_KEY` added |
-| Domain alias set | `rainbow-bakers.vercel.app` |
+| Domain alias set | `rainbowbaker.in` (custom domain via GoDaddy) |
 | GitHub secret added | `VERCEL_TOKEN` in repo → Settings → Secrets |
 
 ---
@@ -48,7 +48,7 @@ These were done once when the project was created. You don't need to do these ag
 
 | Branch | Purpose | Deploys to |
 |---|---|---|
-| `website_v1` | **Production** — live site | `rainbow-bakers.vercel.app` (auto via GitHub Actions) |
+| `website_v1` | **Production** — live site | `rainbowbaker.in` (auto via GitHub Actions) |
 | `feature/*` | Work in progress | Preview URL only (not live) |
 | `main` | Not used for deployment | — |
 
@@ -76,7 +76,7 @@ git commit -m "fix: update hero tagline"
 git push origin website_v1
 ```
 
-**That's it.** GitHub Actions picks up the push and deploys to `rainbow-bakers.vercel.app` within ~2 minutes.
+**That's it.** GitHub Actions picks up the push and deploys to `rainbowbaker.in` within ~2 minutes.
 
 ---
 
@@ -200,7 +200,7 @@ Or manage them at: **vercel.com → project `code` → Settings → Environment 
 vercel ls
 
 # Check which URL is production
-vercel inspect rainbow-bakers.vercel.app
+vercel inspect rainbowbaker.in
 ```
 
 Or check the **Actions** tab on GitHub — each push shows a workflow run with logs.
@@ -216,7 +216,7 @@ cd D:\Projects\BakeryWebsite\code
 vercel --prod --yes
 
 # Then point the domain to the new deployment
-vercel alias set <new-deployment-url> rainbow-bakers.vercel.app
+vercel alias set <new-deployment-url> rainbowbaker.in
 ```
 
 ---
@@ -231,7 +231,7 @@ vercel ls
 vercel promote <old-deployment-url> --yes
 
 # Re-point the domain
-vercel alias set <old-deployment-url> rainbow-bakers.vercel.app
+vercel alias set <old-deployment-url> rainbowbaker.in
 ```
 
 ---
@@ -267,5 +267,5 @@ D:\Projects\BakeryWebsite\
 | Deploy to production | `git push origin website_v1` |
 | Manual deploy | `vercel --prod --yes` |
 | See deployments | `vercel ls` |
-| Check live URL | `vercel inspect rainbow-bakers.vercel.app` |
+| Check live URL | `vercel inspect rainbowbaker.in` |
 | Add env var | `echo "val" \| vercel env add NAME production` |
