@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-dark:    #6B4020;
+  --color-hero:    #8B5A2A;
+  --color-primary: #B85C00;
+  --color-accent:  #E8850A;
+  --color-light:   #FDE8C0;
+  --color-bg:      #FFFBF4;
+  --color-surface: #FEF4E6;
+  --color-text:    #3A1F08;
+  --color-muted:   #7A4A1A;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Festive bar gradient */
+.festive-bar {
+  height: 4px;
+  background: linear-gradient(90deg, #E8850A, #FDE8C0, #B85C00, #FDE8C0, #E8850A);
+  width: 100%;
+}
+
+/* Scroll-triggered fade-up */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Shimmer skeleton animation */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #FEF4E6 25%, #FDE8C0 50%, #FEF4E6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
